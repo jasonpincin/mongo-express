@@ -7,8 +7,8 @@ services:
         build: .
         restart: always
         mem_limit: 512m
+        env_file: _env
         environment:
-            - CONSUL=consul
             - ME_CONFIG_OPTIONS_EDITORTHEME=ambiance
 # ME_CONFIG_MONGODB_SERVER will get re-written by consul-template
             - ME_CONFIG_MONGODB_SERVER=mongodb
@@ -21,8 +21,6 @@ services:
         restart: always
         mem_limit: 512m
         env_file: _env
-        environment:
-            - CONSUL=consul
         ports:
             - 27017
 
