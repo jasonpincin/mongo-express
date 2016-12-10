@@ -33,10 +33,10 @@ COPY bin/* /usr/local/bin/
 
 # override any parent entrypoint
 ENTRYPOINT []
+# see comment in bin/mongo-express-wrapper.sh for why it is necessary
+# "node app" is taken from the "mongo-express" default CMD (no "tini" since we have containerpilot performing those duties instead)
 CMD [ \
 	"containerpilot", \
-# see comment in bin/mongo-express-wrapper.sh for why this is necessary
 	"mongo-express-wrapper.sh", \
-# this is taken from the "mongo-express" default CMD (minus "tini" since we have containerpilot instead)
 	"node", "app" \
 ]
