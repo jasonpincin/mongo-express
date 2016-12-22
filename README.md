@@ -26,6 +26,7 @@ The MongoDB cluster will be initialized according to the process outlined in the
 The [configuration items noted for AutoPilot Pattern MongoDB](https://github.com/autopilotpattern/mongodb/blob/master/README.md#configuration) apply for this image as well as the following explicit parameters for this implementation (passed in via `_env` file next to `docker-compose.yml` and `local-compose.yml`):
 
 - `CONSUL` (optional): when using `local-compose.yml`, this will default to `consul` (and thus use the DNS provided by Docker), but for deploying on Triton via `docker-compose.yml`, this should be set to [the CNS path of the `consul` service (`consul.svc.XXX...`)](https://docs.joyent.com/public-cloud/network/cns)
+- any Mongo Express environment variables, such as `ME_CONFIG_OPTIONS_EDITORTHEME` or `ME_CONFIG_MONGODB_ENABLE_ADMIN`; see [the Mongo Express documentation](https://www.npmjs.com/package/mongo-express#usage-docker) for a more complete list
 
 ### Sponsors
 
