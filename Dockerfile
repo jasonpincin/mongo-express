@@ -10,8 +10,8 @@ RUN apt-get update \
 		wget \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV CONTAINERPILOT_VERSION 2.6.0
-ENV CONTAINERPILOT_SHA1 c1bcd137fadd26ca2998eec192d04c08f62beb1f
+ENV CONTAINERPILOT_VERSION 2.7.0
+ENV CONTAINERPILOT_SHA1 687f7d83e031be7f497ffa94b234251270aee75b
 RUN set -x \
 	&& wget -O containerpilot.tar.gz "https://github.com/joyent/containerpilot/releases/download/${CONTAINERPILOT_VERSION}/containerpilot-${CONTAINERPILOT_VERSION}.tar.gz" \
 	&& echo "${CONTAINERPILOT_SHA1} *containerpilot.tar.gz" | sha1sum -c - \
